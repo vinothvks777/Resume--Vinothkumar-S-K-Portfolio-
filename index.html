@@ -6,8 +6,8 @@ if (isset($_POST['submit'])) {
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
     $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
     $subject = "Portfolio Contact: $name";
-    $body = "Name: $name\nEmail: $email\nMessage:\n$message";
-    $headers = "From: $email\r\nReply-To: $email\r\nX-Mailer: PHP/".phpversion();
+    $body = "Name: $name\\nEmail: $email\\nMessage:\\n$message";
+    $headers = "From: $email\\r\\nReply-To: $email\\r\\nX-Mailer: PHP/".phpversion();
     if (mail($to, $subject, $body, $headers)) {
         $msg = '<div class="alert alert-success text-center mb-4">Message sent successfully!</div>';
     } else {
@@ -81,6 +81,20 @@ Certified in Microsoft Azure (AZ-104), AWS Solutions Architect Associate, and Go
 Strong expertise in Windows Server, Red Hat Enterprise Linux (RHEL), virtualization, backup architecture,
 identity & access management, and infrastructure automation.
 </p>
+<div class="row mt-5">
+<div class="col-md-6">
+<h5>🌐 Connect With Me</h5>
+<ul class="list-unstyled">
+<li><a href="https://github.com/vinothvks777" target="_blank" class="text-decoration-none"><i class="fab fa-github me-2"></i>GitHub</a></li>
+<li><a href="https://linkedin.com/in/vinothkumar-s-k-548964b0/" target="_blank" class="text-decoration-none"><i class="fab fa-linkedin me-2"></i>LinkedIn</a></li>
+<li><a href="mailto:vinothvks777@gmail.com" class="text-decoration-none"><i class="fas fa-envelope me-2"></i>vinothvks777@gmail.com</a></li>
+</ul>
+</div>
+<div class="col-md-6">
+<h5>📍 Location</h5>
+<p>Bangalore, Karnataka, India</p>
+</div>
+</div>
 </div>
 </section>
 
@@ -106,13 +120,12 @@ VMs • Storage • IAM • Networking
 <div class="col-md-3">
 <div class="card p-4 text-center">
 <i class="fab fa-redhat fa-2x text-danger mb-3"></i>
-<h5>Red Hat Linux</h5>
+<h5>Operating Systems</h5>
 <p>
-RHEL Deployment<br>
-Security Hardening<br>
-Cron Jobs<br>
-Ansible Basics<br>
-SELinux
+Windows Server 2019<br>
+Red Hat Enterprise Linux<br>
+Ubuntu Server<br>
+Active Directory
 </p>
 </div>
 </div>
@@ -120,12 +133,12 @@ SELinux
 <div class="col-md-3">
 <div class="card p-4 text-center">
 <i class="fas fa-server fa-2x text-success mb-3"></i>
-<h5>Infrastructure</h5>
+<h5>Network & Security</h5>
 <p>
-Windows Server 2019<br>
-Active Directory<br>
-VMware • Hyper-V<br>
-DNS • DHCP • Firewall
+DHCP • DNS • Group Policy<br>
+Sophos Firewall<br>
+Cisco IP Phones<br>
+TCP/IP • VPN
 </p>
 </div>
 </div>
@@ -133,12 +146,64 @@ DNS • DHCP • Firewall
 <div class="col-md-3">
 <div class="card p-4 text-center">
 <i class="fas fa-code fa-2x text-warning mb-3"></i>
-<h5>Automation</h5>
+<h5>Automation & Scripting</h5>
 <p>
-PowerShell<br>
-Bash Scripting<br>
-Python (Basic)<br>
-Backup Automation
+PowerShell • Bash • Python<br>
+VBScript • Batch Files<br>
+Task Scheduler<br>
+Cron Jobs
+</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card p-4 text-center">
+<i class="fas fa-industry fa-2x text-info mb-3"></i>
+<h5>Manufacturing Systems</h5>
+<p>
+HMI Support<br>
+IPC Systems<br>
+Historian DB<br>
+Pharma Client Systems
+</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card p-4 text-center">
+<i class="fas fa-tools fa-2x text-secondary mb-3"></i>
+<h5>Virtualization</h5>
+<p>
+VMware<br>
+Hyper-V<br>
+System Recovery<br>
+Hiren's BootCD
+</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card p-4 text-center">
+<i class="fas fa-database fa-2x text-dark mb-3"></i>
+<h5>ITSM & Tools</h5>
+<p>
+ServiceNow<br>
+Citrix<br>
+Webex Boardroom<br>
+SQL Server
+</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card p-4 text-center">
+<i class="fas fa-chart-bar fa-2x text-purple mb-3"></i>
+<h5>Data & Reporting</h5>
+<p>
+Excel (VLOOKUP, Pivot)<br>
+Power BI (Basic)<br>
+Event Viewer Logs<br>
+Audit Trail Analysis
 </p>
 </div>
 </div>
@@ -152,60 +217,102 @@ Backup Automation
 <div class="container">
 <h2 class="section-title text-center">Work Experience</h2>
 
-<h5>System Administrator – Viatris Inc (Wipro Ltd)</h5>
-<p>
-Administered Windows & Red Hat Linux servers in pharma manufacturing environment.
-Managed Azure & AWS cloud infrastructure including backup and disaster recovery.
-Implemented access control policies and security compliance reviews.
-Supported HMI, IPC & manufacturing systems.
-Automated backup processes using PowerShell & Bash.
-</p>
+<div class="row g-4">
+<div class="col-md-6">
+<div class="card p-4 h-100">
+<h5><i class="fas fa-building text-primary me-2"></i>System Administrator</h5>
+<h6 class="text-muted">Viatris Inc (Wipro Ltd) - Pharma Manufacturing</h6>
+<ul class="mt-3">
+<li>Administered Windows & Red Hat Linux servers in regulated pharma environment</li>
+<li>Managed Azure & AWS cloud infrastructure including backup and disaster recovery</li>
+<li>Implemented access control policies (ACPM) and security compliance reviews</li>
+<li>Supported HMI, IPC & manufacturing systems with vendor coordination</li>
+<li>Automated backup processes using PowerShell & Bash scripting</li>
+<li>Handled Historian DB support and data backup/restoration</li>
+</ul>
+</div>
+</div>
 
-<h5>System Administrator – Vindhya E-Infomedia</h5>
-<p>
-Managed AD, DNS, DHCP for 450+ users.
-Firewall, network troubleshooting, backup & recovery.
-</p>
+<div class="col-md-6">
+<div class="card p-4 h-100">
+<h5><i class="fas fa-building text-primary me-2"></i>System Administrator</h5>
+<h6 class="text-muted">Vindhya E-Infomedia</h6>
+<ul class="mt-3">
+<li>Managed AD, DNS, DHCP for 450+ users across enterprise</li>
+<li>Network troubleshooting, firewall management, backup & recovery</li>
+<li>Endpoint security hardening and access control implementation</li>
+<li>System provisioning and remote support operations</li>
+</ul>
+</div>
+</div>
 
-<h5>Desktop Support Engineer – HR Lotus</h5>
-<p>
-User support, VPN, Citrix, Outlook, printer management.
-</p>
-
+<div class="col-md-6">
+<div class="card p-4 h-100">
+<h5><i class="fas fa-laptop text-primary me-2"></i>Desktop Support Engineer</h5>
+<h6 class="text-muted">HR Lotus</h6>
+<ul class="mt-3">
+<li>Laptop/Desktop provisioning and O365/Outlook support</li>
+<li>AD user management, VPN, Citrix, printer management</li>
+<li>Remote support, Webex boardroom setup and maintenance</li>
+<li>System recovery using Hiren's BootCD and password resets</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
 <div class="container">
-<h2 class="section-title text-center">Projects</h2>
+<h2 class="section-title text-center">Key Projects & Achievements</h2>
 <div class="row g-4">
 
 <div class="col-md-4">
 <div class="card p-4">
+<i class="fas fa-cloud-arrow-right fa-2x text-primary mb-3"></i>
 <h5>Multi-Cloud Backup Architecture</h5>
-<p>
-Designed automated backup between Azure & AWS S3 using PowerShell & cron jobs.
-Reduced manual recovery time by 80%.
-</p>
+<p>Designed automated backup solution between Azure Blob & AWS S3 using PowerShell cron jobs. Reduced manual recovery time by 80%.</p>
 </div>
 </div>
 
 <div class="col-md-4">
 <div class="card p-4">
+<i class="fas fa-shield-alt fa-2x text-success mb-3"></i>
 <h5>Azure AD & IAM Implementation</h5>
-<p>
-Configured Azure AD Connect & RBAC policies for secure enterprise identity management.
-</p>
+<p>Configured Azure AD Connect, RBAC policies and ACPM for secure enterprise identity management across hybrid environments.</p>
 </div>
 </div>
 
 <div class="col-md-4">
 <div class="card p-4">
+<i class="fas fa-tachometer-alt fa-2x text-warning mb-3"></i>
 <h5>Network Monitoring Dashboard</h5>
-<p>
-Built Flask/PHP dashboard for monitoring infrastructure systems with real-time alerts.
-</p>
+<p>Built Flask/PHP real-time dashboard for infrastructure monitoring with Sophos firewall alerts and system health metrics.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card p-4">
+<i class="fas fa-database fa-2x text-info mb-3"></i>
+<h5>Historian DB Optimization</h5>
+<p>Optimized pharma manufacturing Historian database performance and implemented automated backup with integrity checks.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card p-4">
+<i class="fas fa-chart-line fa-2x text-danger mb-3"></i>
+<h5>Power BI Reporting</h5>
+<p>Created executive dashboards using Power BI for IT infrastructure utilization, backup success rates and security incidents.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card p-4">
+<i class="fas fa-tools fa-2x text-secondary mb-3"></i>
+<h5>Hiren's BootCD Recovery Suite</h5>
+<p>Authorized system recovery toolkit for password resets, boot repairs and data access in enterprise environments.</p>
 </div>
 </div>
 
@@ -216,17 +323,33 @@ Built Flask/PHP dashboard for monitoring infrastructure systems with real-time a
 <!-- CONTACT -->
 <section id="contact" class="bg-light">
 <div class="container">
-<h2 class="section-title text-center">Contact</h2>
+<h2 class="section-title text-center">Get In Touch</h2>
 <?php echo $msg; ?>
 <form method="POST" class="col-md-6 mx-auto">
 <input type="text" name="name" class="form-control mb-3" placeholder="Your Name" required>
 <input type="email" name="email" class="form-control mb-3" placeholder="Your Email" required>
-<textarea name="message" class="form-control mb-3" rows="4" placeholder="Message" required></textarea>
+<textarea name="message" class="form-control mb-3" rows="4" placeholder="Tell me about your project or opportunity..." required></textarea>
 <button type="submit" name="submit" class="btn btn-primary w-100">Send Message</button>
 </form>
-<p class="text-center mt-4">
-LinkedIn | GitHub | vinothvks777@gmail.com
-</p>
+<div class="text-center mt-5">
+<div class="row">
+<div class="col-md-4">
+<a href="https://github.com/vinothvks777" target="_blank" class="btn btn-outline-dark w-100 mb-2">
+<i class="fab fa-github"></i> GitHub
+</a>
+</div>
+<div class="col-md-4">
+<a href="https://linkedin.com/in/vinothkumar-s-k-548964b0/" target="_blank" class="btn btn-primary w-100 mb-2">
+<i class="fab fa-linkedin"></i> LinkedIn
+</a>
+</div>
+<div class="col-md-4">
+<a href="mailto:vinothvks777@gmail.com" class="btn btn-success w-100 mb-2">
+<i class="fas fa-envelope"></i> Email Me
+</a>
+</div>
+</div>
+</div>
 </div>
 </section>
 
