@@ -1,3 +1,20 @@
+<?php
+$msg = '';
+if (isset($_POST['submit'])) {
+    $to = 'vinothvks777@gmail.com';
+    $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
+    $subject = "Portfolio Contact: $name";
+    $body = "Name: $name\\nEmail: $email\\nMessage:\\n$message";
+    $headers = "From: $email\\r\\nReply-To: $email\\r\\nX-Mailer: PHP/".phpversion();
+    if (mail($to, $subject, $body, $headers)) {
+        $msg = '<div class="alert alert-success text-center mb-4">Message sent successfully!</div>';
+    } else {
+        $msg = '<div class="alert alert-danger text-center mb-4">Error sending. Try again.</div>';
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +34,6 @@ body {font-family:'Poppins',sans-serif;scroll-behavior:smooth;}
 section{padding:80px 0;}
 .card{border:none;border-radius:15px;box-shadow:0 10px 25px rgba(0,0,0,0.1);}
 .section-title{font-weight:700;margin-bottom:50px;}
-.contact-form {max-width:500px;margin:0 auto;}
 </style>
 </head>
 
@@ -25,7 +41,7 @@ section{padding:80px 0;}
 
 <nav class="navbar navbar-expand-lg fixed-top">
 <div class="container">
-<a class="navbar-brand text-white fw-bold" href="#">VSK</a>
+<a class="navbar-brand text-white fw-bold" href="#">Resume</a>
 <button class="navbar-toggler bg-white" data-bs-toggle="collapse" data-bs-target="#nav">
 <span class="navbar-toggler-icon"></span>
 </button>
@@ -72,6 +88,11 @@ identity & access management, and infrastructure automation.
 <li><a href="https://github.com/vinothvks777" target="_blank" class="text-decoration-none"><i class="fab fa-github me-2"></i>GitHub</a></li>
 <li><a href="https://linkedin.com/in/vinothkumar-s-k-548964b0/" target="_blank" class="text-decoration-none"><i class="fab fa-linkedin me-2"></i>LinkedIn</a></li>
 <li><a href="mailto:vinothvks777@gmail.com" class="text-decoration-none"><i class="fas fa-envelope me-2"></i>vinothvks777@gmail.com</a></li>
+<li>
+  <a href="tel:+919047400147" class="text-decoration-none">
+    <i class="fas fa-phone me-2"></i>+91 9047400147
+  </a>
+</li>
 </ul>
 </div>
 <div class="col-md-6">
@@ -122,7 +143,7 @@ Active Directory
 DHCP • DNS • Group Policy<br>
 Sophos Firewall<br>
 Cisco IP Phones<br>
-TCP/IP • VPN
+TCP/IP • VPN • Nginx
 </p>
 </div>
 </div>
@@ -133,9 +154,8 @@ TCP/IP • VPN
 <h5>Automation & Scripting</h5>
 <p>
 PowerShell • Bash • Python<br>
-VBScript • Batch Files<br>
-Task Scheduler<br>
-Cron Jobs
+VBScript • Batch Script<br>
+Task Scheduler, N8N <br>
 </p>
 </div>
 </div>
@@ -299,6 +319,72 @@ Audit Trail Analysis
 <p>Authorized system recovery toolkit for password resets, boot repairs and data access in enterprise environments.</p>
 </div>
 </div>
+    
+<!-- PROJECTS -->
+<section id="projects">
+<div class="container">
+<h2 class="section-title text-center">Key Projects</h2>
+<div class="row g-4">
+
+<!-- Project 1 -->
+<div class="col-md-6">
+<div class="card p-4 h-100">
+<i class="fas fa-phone-volume fa-2x text-primary mb-3"></i>
+<h5>Cisco Finesse – VoIP Call Center Implementation</h5>
+<h6 class="text-muted">HR Lotus Client – Vindhya E-Infomedia Pvt Ltd</h6>
+<ul class="mt-3">
+<li>Installed and configured Cisco Finesse for call center operations.</li>
+<li>Managed Cisco Unified Communications Manager (CUCM).</li>
+<li>Configured Cisco Jabber for internal communication and softphones.</li>
+<li>Implemented IP phone provisioning, dial plans, and call routing.</li>
+<li>Managed SIP trunk configuration and voice gateway setup.</li>
+<li>Resolved call drops, latency, and QoS voice traffic issues.</li>
+<li>Configured VLAN segmentation for voice network traffic.</li>
+<li>Provided end-user training and ensured high availability of services.</li>
+</ul>
+<p class="mt-2"><strong>Technologies:</strong> Cisco Finesse, CUCM, VoIP, SIP, VLAN, TCP/IP, Voice Gateway, QoS</p>
+</div>
+</div>
+
+<!-- Project 2 -->
+<div class="col-md-6">
+<div class="card p-4 h-100">
+<i class="fas fa-wifi fa-2x text-success mb-3"></i>
+<h5>Cisco WAP Monitoring & Alert System</h5>
+<h6 class="text-muted">Python Automation | 300+ Access Points</h6>
+<ul class="mt-3">
+<li>Developed centralized monitoring solution for 300+ Cisco Wireless APs.</li>
+<li>Created Python script using ICMP ping for health monitoring.</li>
+<li>Designed real-time dashboard displaying UP/DOWN status.</li>
+<li>Configured automated email alerts for WAP failures.</li>
+<li>Integrated SMTP notifications with device IP & location details.</li>
+<li>Reduced response time and improved proactive network visibility.</li>
+</ul>
+<p class="mt-2"><strong>Technologies:</strong> Python, SMTP, ICMP/Ping, TCP/IP, Network Monitoring</p>
+</div>
+</div>
+
+<!-- Project 3 -->
+<div class="col-md-6">
+<div class="card p-4 h-100">
+<i class="fas fa-database fa-2x text-info mb-3"></i>
+<h5>Data Backup Automation</h5>
+<h6 class="text-muted">Windows PowerShell Implementation</h6>
+<ul class="mt-3">
+<li>Designed automated backup solution for enterprise servers.</li>
+<li>Developed daily & weekly backup scripts using PowerShell.</li>
+<li>Configured Windows Task Scheduler for automation.</li>
+<li>Implemented incremental and full backup strategies.</li>
+<li>Integrated email reporting for backup success/failure.</li>
+<li>Performed restoration testing to validate data integrity.</li>
+<li>Reduced manual effort and minimized downtime risks.</li>
+</ul>
+<p class="mt-2"><strong>Technologies:</strong> Windows Server, PowerShell, Task Scheduler, File System, Network Storage</p>
+</div>
+</div>
+
+</div>
+</div>
 
 </div>
 </div>
@@ -308,31 +394,13 @@ Audit Trail Analysis
 <section id="contact" class="bg-light">
 <div class="container">
 <h2 class="section-title text-center">Get In Touch</h2>
-
-<div class="contact-form">
-<div class="alert alert-info text-center mb-4" role="alert">
-📧 Messages will be forwarded to: <strong>vinothvks777@gmail.com</strong>
-</div>
-
-<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="row g-3">
-<input type="hidden" name="_subject" value="Portfolio Contact Form">
-<input type="hidden" name="_next" value="https://yourdomain.com/thankyou.html">
-
-<div class="col-12">
-<input type="text" name="name" class="form-control" placeholder="Your Name" required>
-</div>
-<div class="col-12">
-<input type="email" name="email" class="form-control" placeholder="Your Email" required>
-</div>
-<div class="col-12">
-<textarea name="message" class="form-control" rows="4" placeholder="Tell me about your project or opportunity..." required></textarea>
-</div>
-<div class="col-12">
-<button type="submit" class="btn btn-primary w-100">Send Message</button>
-</div>
+<?php echo $msg; ?>
+<form method="POST" class="col-md-6 mx-auto">
+<input type="text" name="name" class="form-control mb-3" placeholder="Your Name" required>
+<input type="email" name="email" class="form-control mb-3" placeholder="Your Email" required>
+<textarea name="message" class="form-control mb-3" rows="4" placeholder="Tell me about your project or opportunity..." required></textarea>
+<button type="submit" name="submit" class="btn btn-primary w-100">Send Message</button>
 </form>
-</div>
-
 <div class="text-center mt-5">
 <div class="row">
 <div class="col-md-4">
@@ -351,7 +419,6 @@ Audit Trail Analysis
 </a>
 </div>
 </div>
-<p class="mt-3 text-muted">Bangalore, Karnataka, India</p>
 </div>
 </div>
 </section>
